@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    >
+
+    <title>forageجون</title>
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/maplibre-gl@5.7.1/dist/maplibre-gl.css"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main id="app">
+
+        <!-- Map -->
+        <section id="map"></section>
+
+        <!-- Menu -->
+        <button
+            id="menu-button"
+            class="map-button"
+            aria-label="Open menu"
+        >
+            ☰
+        </button>
+
+        <!-- Add a plant -->
+        <button
+            id="add-plant-button"
+            class="add-button"
+            aria-label="Add a plant"
+        >
+            +
+        </button>
+
+        <!-- Menu panel -->
+        <aside id="menu-panel" class="menu-panel hidden">
+            <button id="filter-button">Filter</button>
+            <button id="search-button">Search</button>
+            <button id="list-button">List view</button>
+        </aside>
+
+        <!-- Add plant screen -->
+        <section id="new-plant-screen" class="screen hidden">
+
+            <div class="plant-photo">
+                <p>Photo goes here</p>
+            </div>
+
+            <form id="new-plant-form">
+
+                <label>
+                    plant name
+                    <input
+                        type="text"
+                        id="plant-name"
+                        name="nickname"
+                    >
+                </label>
+
+                <label>
+                    notes
+                    <textarea
+                        id="observation-notes"
+                        name="notes"
+                    ></textarea>
+                </label>
+
+                <label>
+                    ideas
+                    <textarea
+                        id="observation-ideas"
+                        name="ideas"
+                    ></textarea>
+                </label>
+
+                <label>
+                    colors
+                    <input
+                        type="text"
+                        id="observation-colors"
+                        name="colors"
+                        placeholder="e.g. cream, rust, pale green"
+                    >
+                </label>
+
+                <label>
+                    textures
+                    <input
+                        type="text"
+                        id="observation-textures"
+                        name="textures"
+                        placeholder="e.g. papery, glossy, woody"
+                    >
+                </label>
+
+                <button type="button" id="add-photo-button">
+                    more photos
+                </button>
+
+                <button type="submit" id="save-plant-button">
+                    save
+                </button>
+
+            </form>
+        </section>
+
+        <!-- Camera -->
+        <input
+            type="file"
+            id="camera-input"
+            accept="image/*"
+            capture="environment"
+            hidden
+        >
+
+        <script src="https://cdn.jsdelivr.net/npm/maplibre-gl@5.7.1/dist/maplibre-gl.js"></script>
+        <script src="app.js"></script>
+
+    </main>
+</body>
+</html>
